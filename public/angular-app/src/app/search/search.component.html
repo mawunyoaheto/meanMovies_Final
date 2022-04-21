@@ -1,0 +1,31 @@
+<br><br>
+
+<div class="container">
+
+    <form [formGroup]="searchForm">
+      <div class="leftContainer">
+        <input formControlName="title" class="form-control mr-sm-2" type="text" placeholder="movie title" aria-label="username" #title>
+      </div>
+     <div class="leftContainer">
+      <button (click)="search()" class="btn btn-primary" type="button">search</button>
+     </div>
+
+      </form>
+     <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 5%">#</th>
+          <th scope="col"style="width: 85%">Movie Title</th>
+          <!-- <th scope="col" style="width: 10%">Action</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <a [routerLink]="['/movies',movie._id]">{{ movie.title }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

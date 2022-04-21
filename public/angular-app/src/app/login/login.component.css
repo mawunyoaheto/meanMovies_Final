@@ -1,0 +1,11 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+label{
+  color: black;
+  padding-right: 2px;
+}
+
+body{
+  color: rgba(0, 0, 0, 0.282);
+  padding-right: 2px;
+}

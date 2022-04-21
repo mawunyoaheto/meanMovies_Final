@@ -1,0 +1,62 @@
+<div class="container">
+  <br />
+  <h2>List of Movies</h2>
+  <button class="btn btn-primary" (click)="openForm()">Add Movie</button>
+  <div>
+    <div class="fltLeft">
+     <input type="text" [(ngModel)]="title"/> <label for="title">Filter</label>
+    </div>
+    <div class="fltRight">
+      movies per page
+      <select #pagination (change)="onChange($event,pagination.value)" id="pagination">
+        <option *ngFor="let count of selected">{{count}}</option>
+      </select>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 5%">#</th>
+        <th scope="col"style="width: 85%">Movie Title</th>
+        <th scope="col" style="width: 10%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies |filter:title; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <a [routerLink]="['/movies',movie._id]">{{ movie.title }}</a>
+        </td>
+        <td>
+          <a  (click)="editMovie(movie)" class="btn btn-sm btn-primary mr-1">Edit</a>
+          <a (click)="onDelete(movie._id)" class="btn btn-sm btn-danger btn-delete-user">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-controller>
+    <button (click)="previous(pagination.value)" [disabled]="previousButtonDisabled">Previous</button>
+    <button  (click)="next(pagination.value)" [disabled]="nextButtonDisabled">Next</button>
+  </div>
+
+</div>
+<ng-container *ngIf="showForm">
+  <div class="jw-modal" >
+    <div class="jw-modal-body" style="width: 700px !important; margin-inline: auto;">
+      <div class="w-full rounded-lg border ">
+          <a
+            (click)="openForm()"
+            class="cursor-pointer rounded"  style="float: right;"
+            >X</a
+          >
+        <app-add-movie
+          [addNewFormEditState]="addNewFormEditState"
+          [editData]="editData"
+          (dismiss)="closeForm($event)"
+        ></app-add-movie>
+      </div>s
+    </div>
+  </div>
+  <div class="jw-modal-background"></div>
+</ng-container>
+

@@ -1,0 +1,7 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+label{
+  color: rgba(0, 0, 0, 0.282);
+  padding-right: 2px;
+}
+

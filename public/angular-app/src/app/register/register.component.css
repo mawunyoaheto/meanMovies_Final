@@ -1,0 +1,74 @@
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}
+
+input[type=text],input[type=password], input[type=email],select {
+  margin-bottom: 2px;
+  width: 98%;
+  border: 1px solid #999;
+  padding: 2px;
+
+}
+
+
+  form{
+      margin: 0 auto;
+      margin-bottom: 2em;
+      width: 600px;
+      padding: 1em;
+      border: 1px solid #CCC;
+      border-radius: 1em;
+      box-shadow: 1px 2px 2px 1px #dedada;
+
+  }
+  label{
+    color: white;
+  }
+  form div{
+      margin: 10px;
+  }
+
+  div.card {
+      margin: 0 auto;
+      width: 550px;
+      padding: 5px;
+  }
+  button {
+      margin: 3px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+
+    #header{
+      margin: 0 auto;
+      width: 550px;
+      margin-bottom: 5px;
+  }
+
+
+  .form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+  }
+
+  .form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+  }

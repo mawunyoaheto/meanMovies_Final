@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../../assets/icons/icons8-movie-64.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a (click)="onHome()" class="nav-link pointer-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <span *ngIf="authorized"><a (click)="onMovies()" class="nav-link pointer-link">Movies</a></span>
+        </li>
+        <li class="nav-item">
+          <span *ngIf="authorized"><a (click)="onSearch()" class="nav-link pointer-link">Search</a></span>
+        </li>
+        <li class="nav-item">
+          <span *ngIf="authorized"><a (click)="onUsers()" class="nav-link pointer-link">Users</a></span>
+        </li>
+        <li class="nav-item">
+          <a (click)="onRegister()" class="nav-link pointer-link">Register</a>
+        </li>
+      </ul>
+    </div>
+  <app-login ></app-login>
+  </nav>

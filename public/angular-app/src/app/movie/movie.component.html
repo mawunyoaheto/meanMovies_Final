@@ -1,0 +1,8 @@
+<div><h1>{{movie.title}} </h1></div>
+
+Year: {{movie.year}}<br />
+<button (click)="onDelete(movie._id)" class="btn btn-sm btn-danger btn-delete-user">Delete Movie</button>
+<br>
+<div class="container">
+  <app-actors [movieId]="movieId"></app-actors>
+</div>

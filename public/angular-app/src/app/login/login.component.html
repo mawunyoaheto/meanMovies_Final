@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" class="form-inline" *ngIf="!authorized">
+  <label>email</label>
+  <input
+    formControlName="email"
+    class="form-control mr-sm-2"
+    type="text"
+    placeholder="email"
+    aria-label="username"
+    #email
+  />
+  <label>password</label>
+  <input
+    formControlName="password"
+    class="form-control mr-sm-2"
+    type="password"
+    placeholder="password"
+    aria-label="password"
+    #password
+  />
+  <button
+    (click)="onLogin()"
+    class="btn btn-outline-success my-2 my-sm-0"
+    type="submit"
+  >
+    login
+  </button>
+</form>
+<div *ngIf="authorized">
+  <span style="color: black; padding-right: 10px">{{welcome_msg}} {{ name }}</span>
+  <button
+    (click)="onLogout()"
+    class="btn btn-outline-success my-2 my-sm-0"
+    type="submit"
+  >
+    logout
+  </button>
+</div>

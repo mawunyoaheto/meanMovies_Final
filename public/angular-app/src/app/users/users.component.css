@@ -1,0 +1,16 @@
+.fltRight{
+  float: right;
+  padding: 5px;
+}
+
+.fltLeft{
+  float: left;
+  padding: 5px;
+}
+
+button {
+  margin: 3px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}

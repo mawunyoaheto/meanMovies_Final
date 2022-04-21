@@ -1,0 +1,23 @@
+/* @import "~bootstrap/dist/css/bootstrap.min.css"; */
+
+
+.fltLeft{
+  float: left;
+  padding: 5px;
+}
+
+.leftContainer {
+  float:left;
+  padding: 3px;
+}
+
+.rightContainer {
+  float:right;
+}
+
+button {
+  margin: 3px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}

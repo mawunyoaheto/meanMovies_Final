@@ -1,0 +1,52 @@
+<div class="container">
+  <br />
+  <h2>{{title}}</h2>
+  <button class="btn btn-primary" [routerLink]="['/register',authorized]">Add User</button>
+  <div>
+    <div class="fltLeft">
+      <input type="text" [(ngModel)]="name"/> <label for="title">Filter</label>
+     </div>
+    <div class="fltRight">
+      users per page
+      <select #pagination (change)="onChange($event,pagination.value)" id="pagination">
+        <option *ngFor="let count of selected">{{count}}</option>
+      </select>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 5%">#</th>
+        <th scope="col" style="width: 25%">User Name</th>
+        <th scope="col" style="width: 30%">Email</th>
+        <th scope="col" style="width: 10%">Blocked</th>
+        <th scope="col" style="width: 15%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users |filter:name; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <a [routerLink]="['/users',user._id]">{{ user.name }}</a>
+        </td>
+        <td>{{user.email}}</td>
+        <td>{{user.blocked}}</td>
+        <td>
+          <a class="pointer-link" (click)="resetPassword(user)">Reset password</a> |
+          <a class="pointer-link" (click)="editUser(user)">Edit</a> |
+          <a *ngIf="user.blocked=='No'"(click)="onBlock(user._id)" class="pointer-link">Block</a>
+          <a *ngIf="user.blocked=='Yes'" (click)="onBlock(user._id)" class="pointer-link">Unblock</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-controller>
+    <button (click)="previous(pagination.value)" [disabled]="previousButtonDisabled">Previous</button>
+    <button  (click)="next(pagination.value)" [disabled]="nextButtonDisabled">Next</button>
+  </div>
+
+  <br><br>
+  <ng-container *ngIf="showErrorPage">
+    <app-error-page [errorMessage]="errorMsg"></app-error-page>
+  </ng-container>
+</div>
